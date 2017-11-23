@@ -1,2 +1,2 @@
 # DeepClone
-把jquery里extend的深拷贝单独裁出来
+别问我为啥要用到深拷贝，菜鸡是这样的。= =
