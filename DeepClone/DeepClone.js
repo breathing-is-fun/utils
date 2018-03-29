@@ -1,8 +1,3 @@
-/* 把jquery里extend的深拷贝拿出来
-    其实这也不算深拷贝，这只拷贝了一层，但放在这里够用了，也不太影响性能
-
-    这里去掉了浅拷贝的参数，什么浅拷贝你还要用jquery的？
-*/
 define([], function () {
     var copyIsArray,
         toString = Object.prototype.toString,
