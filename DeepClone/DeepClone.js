@@ -74,5 +74,5 @@ define([], function () {
             return target;
         };
 
-    return {extend: extend};
+    return extend;
 });
