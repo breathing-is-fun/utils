@@ -5,12 +5,12 @@
     
 # 用法
 ``` javascript
-    import param from './Param'
+    import serialize from './Serialize'
 
     let data = {
         test: 'test',
         test2: ['test3', 'test4']
     }
         
-    console.log(param(data)) // test=test&test2%5B%5D=test3&test2%5B%5D=test4
+    console.log(serialize(data)) // test=test&test2%5B%5D=test3&test2%5B%5D=test4
 ```

@@ -101,7 +101,7 @@ define([], function () {
 
 		return obj;
     },
-    param = function(a, traditional) {
+    serialize = function(a, traditional) {
         var prefix, s = [],
 		add = function(key, valueOrFunction) {
 			var value = isFunction( valueOrFunction ) ?
@@ -126,5 +126,5 @@ define([], function () {
         return s.join( "&" );
     }
 
-    return param;
+    return serialize;
 });
