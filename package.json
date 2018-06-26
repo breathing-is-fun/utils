@@ -1,11 +1,24 @@
 {
   "name": "utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Some utils in daily coding.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node webpack.prod.js development",
     "push": "git add .&& git commit -m \"update\" && git push"
+  },
+  "devDependencies": {
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.7",
+    "webpack-dev-server": "^3.1.4",
+    "toho-log-plugin": "git+https://github.com/zy410419243/toho-log-plugin.git",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-import": "^1.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19"
   },
   "repository": {
     "type": "git",
