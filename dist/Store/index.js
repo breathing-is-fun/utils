@@ -106,9 +106,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @Author: zy9@github.com/zy410419243 
  * @Date: 2018-06-25 22:28:14 
  * @Last Modified by: zy9
- * @Last Modified time: 2018-06-25 23:06:32
+ * @Last Modified time: 2018-06-26 14:37:13
  */
-var Store = function Store(name, defaults) {
+var Store = exports.Store = function Store(name, defaults) {
     _classCallCheck(this, Store);
 
     _initialiseProps.call(this);
@@ -212,8 +212,6 @@ var _initialiseProps = function _initialiseProps() {
         return _this;
     };
 };
-
-exports.default = Store;
 
 /***/ })
 

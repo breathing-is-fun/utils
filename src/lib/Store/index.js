@@ -2,9 +2,9 @@
  * @Author: zy9@github.com/zy410419243 
  * @Date: 2018-06-25 22:28:14 
  * @Last Modified by: zy9
- * @Last Modified time: 2018-06-25 23:06:32
+ * @Last Modified time: 2018-06-26 14:37:13
  */
-export default class Store {
+export class Store {
     constructor(name, defaults) {
         this.name = name;
 
