@@ -1,4 +1,4 @@
-# Param
+# Serialize
     const { param } = Jquery.$
 
 致敬jquery中ajax序列化参数的方法，可以用在fetch中url参数的序列化上

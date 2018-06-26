@@ -2,15 +2,15 @@
  * @Author: zy9@github.com/zy410419243 
  * @Date: 2018-06-25 22:28:14 
  * @Last Modified by: zy9
- * @Last Modified time: 2018-06-26 14:37:13
+ * @Last Modified time: 2018-06-26 15:06:56
  */
-export class Store {
+export default class Store {
     constructor(name, defaults) {
         this.name = name;
 
-        if(defaults !== undefined) {
+        if (defaults !== undefined) {
             for (let key in defaults) {
-                if(defaults.hasOwnProperty(key) && this.get(key) === undefined) {
+                if (defaults.hasOwnProperty(key) && this.get(key) === undefined) {
                     this.set(key, defaults[key]);
                 }
             }
@@ -18,25 +18,25 @@ export class Store {
     }
 
     get = (name = 'store.' + this.name + '.' + name) => {
-        if(localStorage.getItem(name) === null) { return undefined; }
+        if (localStorage.getItem(name) === null) { return undefined; }
 
         try {
             return JSON.parse(localStorage.getItem(name));
-        } catch(e) {
+        } catch (e) {
             return null;
         }
     }
 
     set = (name, value) => {
-        if(value === undefined) {
+        if (value === undefined) {
             this.remove(name);
         } else {
-            if(typeof value === 'function') {
+            if (typeof value === 'function') {
                 value = null;
             } else {
                 try {
                     value = JSON.stringify(value);
-                } catch(e) {
+                } catch (e) {
                     value = null;
                 }
             }
@@ -55,9 +55,9 @@ export class Store {
 
     removeAll = () => {
         let name = 'store.' + this.name + '.';
-        
+
         for (let i = (localStorage.length - 1); i >= 0; i--) {
-            if(localStorage.key(i).substring(0, name.length) === name) {
+            if (localStorage.key(i).substring(0, name.length) === name) {
                 localStorage.removeItem(localStorage.key(i));
             }
         }
@@ -70,12 +70,12 @@ export class Store {
 
         let name = 'store.' + this.name + '.';
         for (let i = (localStorage.length - 1); i >= 0; i--) {
-            if(localStorage.key(i).substring(0, name.length) === name) {
+            if (localStorage.key(i).substring(0, name.length) === name) {
                 key = localStorage.key(i).substring(name.length);
 
                 value = this.get(key);
 
-                if(value !== undefined) { values[key] = value; }
+                if (value !== undefined) { values[key] = value; }
             }
         }
 
@@ -84,9 +84,9 @@ export class Store {
 
     fromObject = (values, merge) => {
         !merge && this.removeAll();
-        
+
         for (let key in values) {
-            if(values.hasOwnProperty(key)) {
+            if (values.hasOwnProperty(key)) {
                 this.set(key, values[key]);
             }
         }
