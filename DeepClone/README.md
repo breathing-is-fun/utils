@@ -11,7 +11,7 @@
     
 # 用法
 ``` javascript
-    import extend from './DeepClone'
+    import extend from './index'
 
     let old_obj = { test: 1 };
     let new_obj = extend({}, old_obj);

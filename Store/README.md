@@ -7,7 +7,7 @@
 # 用法  
 
 ``` javascript
-    import Store from './Store'
+    import Store from './index'
 
     const { get, set, remove, removeAll, toObject, fromObject } = new Store();
 

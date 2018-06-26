@@ -5,7 +5,7 @@
     
 # 用法
 ``` javascript
-    import serialize from './Serialize'
+    import serialize from './index'
 
     let data = {
         test: 'test',
