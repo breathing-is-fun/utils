@@ -9,6 +9,15 @@
 ``` javascript
     import Store from './index'
 
+    /** 
+     * 这样初始化时，输出localStorage会显示
+     * Storage {
+     *   length: 1,
+     *   store.options.test: 1
+     * }
+     * */
+    const local = new Store('options', { test: 1 });
+
     const { get, set, remove, removeAll, toObject, fromObject } = new Store();
 
     const targetStorage = get('targetName');

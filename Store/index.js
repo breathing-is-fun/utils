@@ -2,7 +2,7 @@
  * @Author: zy9@github.com/zy410419243 
  * @Date: 2018-06-25 22:28:14 
  * @Last Modified by: zy9
- * @Last Modified time: 2018-06-26 15:06:56
+ * @Last Modified time: 2018-06-26 16:28:35
  */
 export default class Store {
     constructor(name, defaults) {
@@ -17,7 +17,9 @@ export default class Store {
         }
     }
 
-    get = (name = 'store.' + this.name + '.' + name) => {
+    get = (propsName) => {
+        name = 'store.' + this.name + '.' + propsName;
+
         if (localStorage.getItem(name) === null) { return undefined; }
 
         try {
@@ -55,7 +57,6 @@ export default class Store {
 
     removeAll = () => {
         let name = 'store.' + this.name + '.';
-
         for (let i = (localStorage.length - 1); i >= 0; i--) {
             if (localStorage.key(i).substring(0, name.length) === name) {
                 localStorage.removeItem(localStorage.key(i));
@@ -72,9 +73,7 @@ export default class Store {
         for (let i = (localStorage.length - 1); i >= 0; i--) {
             if (localStorage.key(i).substring(0, name.length) === name) {
                 key = localStorage.key(i).substring(name.length);
-
                 value = this.get(key);
-
                 if (value !== undefined) { values[key] = value; }
             }
         }
@@ -83,8 +82,7 @@ export default class Store {
     }
 
     fromObject = (values, merge) => {
-        !merge && this.removeAll();
-
+        if (merge !== true) { this.removeAll(); }
         for (let key in values) {
             if (values.hasOwnProperty(key)) {
                 this.set(key, values[key]);
