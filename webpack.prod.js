@@ -2,7 +2,7 @@
  * @Author: zy9@github.com/zy410419243 
  * @Date: 2018-05-20 13:48:08 
  * @Last Modified by: zy9
- * @Last Modified time: 2018-06-26 14:17:12
+ * @Last Modified time: 2018-06-26 14:24:45
  */
 const webpack = require('webpack');
 const fs = require('fs');
@@ -12,8 +12,9 @@ const path = require('path');
 
 const dev = process.argv.includes('development') ? true : false;
 
+// production
 const options = {
-    mode: 'production',
+    mode: 'development',
     devServer: {
         port: 9099
     },
