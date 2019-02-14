@@ -1,4 +1,4 @@
-export default (a, traditional) => {
+define([], function() {
   var class2type = {
     "[object Boolean]": "boolean",
     "[object Number]": "number",
@@ -32,7 +32,6 @@ export default (a, traditional) => {
       }
 
       var key;
-
       for (key in obj) {
       }
 
@@ -42,7 +41,7 @@ export default (a, traditional) => {
       var name;
 
       if (Array.isArray(obj)) {
-        each(obj, (i, v) => {
+        each(obj, function(i, v) {
           if (traditional || rbracket.test(prefix)) {
             add(prefix, v);
           } else {
@@ -109,7 +108,7 @@ export default (a, traditional) => {
 
       return obj;
     },
-    param = function(a, traditional) {
+    serialize = function(a, traditional) {
       var prefix,
         s = [],
         add = function(key, valueOrFunction) {
@@ -136,5 +135,5 @@ export default (a, traditional) => {
       return s.join("&");
     };
 
-  return param(a, traditional);
-};
+  return serialize;
+});

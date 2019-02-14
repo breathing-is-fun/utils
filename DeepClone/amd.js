@@ -1,4 +1,4 @@
-export default (target, options) => {
+define([], function() {
   var copyIsArray,
     toString = Object.prototype.toString,
     hasOwn = Object.prototype.hasOwnProperty;
@@ -40,7 +40,6 @@ export default (target, options) => {
       }
 
       var key;
-
       for (key in obj) {
       }
 
@@ -55,14 +54,12 @@ export default (target, options) => {
           continue;
         }
 
-        var clone;
-
         if (copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
           if (copyIsArray) {
             copyIsArray = false;
-            clone = src && isArray(src) ? src : [];
+            var clone = src && isArray(src) ? src : [];
           } else {
-            clone = src && isPlainObject(src) ? src : {};
+            var clone = src && isPlainObject(src) ? src : {};
           }
 
           target[name] = extend(clone, copy);
@@ -74,5 +71,5 @@ export default (target, options) => {
       return target;
     };
 
-  return extend(target, options);
-};
+  return extend;
+});
