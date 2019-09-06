@@ -1,9 +1,11 @@
-import React, { Component } from "react";
-import "./assets/animate.css";
+import React from 'react';
+import './assets/animate.css';
 
-export default class index extends Component {
-  // index 会渐现
-  render = () => {
-    return <div className="animate-appear">index</div>;
-  };
-}
+// index 会渐现
+// test 会渐隐，消失后不会保留交互性
+export default Demo = () => (
+  <>
+    <div className="animate-appear">index</div>
+    <div className="box">test</div>
+  </>
+);
